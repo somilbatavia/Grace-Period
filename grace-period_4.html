@@ -1,0 +1,920 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=1, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="Grace Period">
+<meta name="theme-color" content="#EDF1EC">
+<title>Grace Period</title>
+<link rel="apple-touch-icon" sizes="180x180" href="data:image/png;base64,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">
+<style>
+  :root{
+    --bg:#EDF1EC;
+    --surface:#FFFFFF;
+    --ink:#1E2A24;
+    --muted:#5E6E65;
+    --hair:#DCE3DD;
+    --accent:#2F6B4F;
+    --accent-press:#255840;
+
+    --safe:#4F9C77;
+    --safe-soft:#E3F1E9;
+    --caution:#CC9326;
+    --caution-soft:#F6ECD4;
+    --missed:#CF6A5A;
+    --missed-soft:#F6E0DB;
+
+    --status:var(--safe);
+    --status-soft:var(--safe-soft);
+
+    --shadow:0 1px 2px rgba(31,42,36,.05),0 10px 30px rgba(31,42,36,.07);
+    --r:20px;
+    font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","Segoe UI",Roboto,system-ui,sans-serif;
+  }
+  *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+  html,body{margin:0;height:100%}
+  body{
+    background:
+      radial-gradient(140% 70% at 50% -10%, var(--status-soft) 0%, rgba(255,255,255,0) 60%),
+      var(--bg);
+    color:var(--ink);
+    -webkit-font-smoothing:antialiased;
+    transition:background .8s ease;
+    overflow-x:hidden;
+  }
+  .app{
+    max-width:440px;margin:0 auto;min-height:100%;
+    padding:max(20px,env(safe-area-inset-top)) 22px max(26px,env(safe-area-inset-bottom));
+    display:flex;flex-direction:column;
+  }
+  .screen{display:none;flex:1;flex-direction:column;animation:fade .45s ease}
+  .screen.active{display:flex}
+  @keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+
+  /* ---------- header ---------- */
+  .topbar{display:flex;align-items:center;justify-content:space-between;padding:6px 2px 2px}
+  .brandmark{display:flex;align-items:center;gap:9px}
+  .brandmark .leaf{width:22px;height:22px;color:var(--accent)}
+  .brandmark b{font-size:16px;font-weight:650;letter-spacing:-.01em}
+  .icon-btn{
+    width:40px;height:40px;border:none;background:var(--surface);border-radius:50%;
+    box-shadow:var(--shadow);color:var(--ink);display:grid;place-items:center;cursor:pointer;
+  }
+  .icon-btn svg{width:19px;height:19px}
+  .icon-btn:active{transform:scale(.94)}
+
+  /* ---------- main / ring ---------- */
+  .main-wrap{flex:1;display:flex;flex-direction:column;justify-content:center;gap:22px;padding:8px 0 4px}
+  .statusword{
+    text-align:center;font-size:13px;font-weight:650;letter-spacing:.14em;text-transform:uppercase;
+    color:var(--status);transition:color .6s ease;
+  }
+  .ringbox{position:relative;width:266px;height:266px;margin:2px auto 0}
+  .ring{width:100%;height:100%;transform:rotate(-90deg)}
+  .ring-track{stroke:var(--hair);}
+  .ring-prog{stroke:var(--status);transition:stroke .6s ease,stroke-dashoffset .9s cubic-bezier(.4,0,.2,1)}
+  .breathe{animation:breathe 4.6s ease-in-out infinite;transform-origin:center}
+  @keyframes breathe{0%,100%{opacity:.9}50%{opacity:.55}}
+  .ring-center{
+    position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;text-align:center;padding:0 30px;
+  }
+  .big-time{font-size:46px;font-weight:680;letter-spacing:-.02em;font-variant-numeric:tabular-nums;line-height:1}
+  .big-sub{font-size:13.5px;color:var(--muted);max-width:170px;line-height:1.35}
+  .pill-line{
+    display:flex;align-items:center;justify-content:center;gap:8px;color:var(--muted);font-size:13.5px;text-align:center
+  }
+  .dot{width:7px;height:7px;border-radius:50%;background:var(--status);transition:background .6s}
+  .packchip{
+    align-self:center;background:var(--surface);box-shadow:var(--shadow);border-radius:999px;
+    padding:7px 15px;font-size:12.5px;font-weight:620;color:var(--ink);letter-spacing:.01em;
+    display:flex;align-items:center;gap:8px;margin-bottom:-6px
+  }
+  .packchip .pk{width:7px;height:7px;border-radius:50%;background:var(--status);transition:background .6s}
+  .btn[disabled]{opacity:.55;pointer-events:none}
+
+  /* ---------- buttons ---------- */
+  .btn{
+    width:100%;border:none;border-radius:16px;padding:17px 20px;font-size:16.5px;font-weight:620;
+    cursor:pointer;font-family:inherit;transition:transform .12s ease,background .2s ease;letter-spacing:-.01em;
+  }
+  .btn:active{transform:scale(.985)}
+  .btn-primary{background:var(--accent);color:#fff;box-shadow:0 6px 18px rgba(47,107,79,.28)}
+  .btn-primary:active{background:var(--accent-press)}
+  .btn-danger{background:var(--missed);color:#fff;box-shadow:0 6px 18px rgba(207,106,90,.28)}
+  .btn-ghost{background:var(--surface);color:var(--ink);box-shadow:var(--shadow)}
+  .btn-soft{background:var(--status-soft);color:var(--status);transition:background .6s,color .6s}
+  .actions{display:flex;flex-direction:column;gap:11px;margin-top:4px}
+
+  .taken-note{text-align:center;font-size:12.5px;color:var(--muted);margin-top:14px}
+
+  /* ---------- onboarding ---------- */
+  .ob-head{margin:18px 2px 22px}
+  .ob-head h1{font-size:27px;font-weight:700;letter-spacing:-.025em;margin:0 0 8px;line-height:1.12}
+  .ob-head p{margin:0;color:var(--muted);font-size:15px;line-height:1.45}
+  .step-dots{display:flex;gap:6px;margin:0 2px 18px}
+  .step-dots span{height:4px;border-radius:2px;flex:1;background:var(--hair)}
+  .step-dots span.on{background:var(--accent)}
+
+  label.fld{display:block;font-size:13px;font-weight:600;color:var(--muted);margin:0 4px 8px}
+  .input,.select{
+    width:100%;border:1.5px solid var(--hair);background:var(--surface);border-radius:14px;
+    padding:15px 16px;font-size:16px;font-family:inherit;color:var(--ink);outline:none;transition:border-color .2s;
+  }
+  .input:focus,.select:focus{border-color:var(--accent)}
+  .select{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' fill='none' stroke='%235E6E65' stroke-width='2'%3E%3Cpath d='M5 8l5 5 5-5'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;padding-right:42px}
+  .hint{font-size:12.5px;color:var(--muted);margin:9px 4px 0;line-height:1.4}
+
+  .suggest{position:relative}
+  .suglist{
+    position:absolute;left:0;right:0;top:calc(100% + 6px);background:var(--surface);border-radius:14px;
+    box-shadow:var(--shadow);overflow:hidden;z-index:20;max-height:230px;overflow-y:auto;display:none;border:1px solid var(--hair)
+  }
+  .suglist.show{display:block}
+  .sug{padding:13px 16px;font-size:15px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:10px}
+  .sug:active,.sug.kbd{background:var(--safe-soft)}
+  .sug+.sug{border-top:1px solid var(--hair)}
+  .sug .tag{font-size:11px;color:var(--muted);font-weight:600;white-space:nowrap}
+
+  /* type cards */
+  .typecard{
+    border:1.5px solid var(--hair);border-radius:16px;padding:15px 16px;cursor:pointer;background:var(--surface);
+    display:flex;gap:13px;align-items:flex-start;transition:border-color .2s,background .2s
+  }
+  .typecard+.typecard{margin-top:10px}
+  .typecard.sel{border-color:var(--accent);background:var(--safe-soft)}
+  .typecard .rd{width:21px;height:21px;border-radius:50%;border:2px solid var(--hair);flex:none;margin-top:1px;display:grid;place-items:center}
+  .typecard.sel .rd{border-color:var(--accent)}
+  .typecard.sel .rd::after{content:"";width:11px;height:11px;border-radius:50%;background:var(--accent)}
+  .typecard .tt{font-size:15.5px;font-weight:620;margin-bottom:3px}
+  .typecard .td{font-size:13px;color:var(--muted);line-height:1.4}
+
+  .timegrid{display:flex;gap:10px}
+  .timegrid .input{text-align:center;font-size:20px;font-variant-numeric:tabular-nums;letter-spacing:.04em}
+
+  .footer-btn{margin-top:auto;padding-top:18px}
+  .linkrow{display:flex;justify-content:space-between;align-items:center;margin-top:14px}
+  .textlink{background:none;border:none;color:var(--accent);font-weight:600;font-size:14.5px;font-family:inherit;cursor:pointer;padding:8px 4px}
+  .textlink:active{opacity:.6}
+
+  /* ---------- sheet / modal ---------- */
+  .sheet-bg{position:fixed;inset:0;background:rgba(20,28,24,.42);backdrop-filter:blur(3px);z-index:50;display:none;align-items:flex-end;justify-content:center}
+  .sheet-bg.show{display:flex;animation:fade .25s}
+  .sheet{
+    background:var(--bg);width:100%;max-width:440px;border-radius:26px 26px 0 0;
+    padding:10px 22px max(24px,env(safe-area-inset-bottom));max-height:90vh;overflow-y:auto;
+    animation:slideup .34s cubic-bezier(.2,.7,.2,1)
+  }
+  @keyframes slideup{from{transform:translateY(40px);opacity:.6}to{transform:none;opacity:1}}
+  .grab{width:40px;height:4px;border-radius:3px;background:var(--hair);margin:6px auto 16px}
+  .sheet h2{font-size:21px;font-weight:700;letter-spacing:-.02em;margin:0 0 4px}
+  .sheet h2.alert{color:var(--missed)}
+  .sheet .lead{color:var(--muted);font-size:14.5px;line-height:1.5;margin:0 0 18px}
+
+  .steps{list-style:none;margin:0 0 8px;padding:0;counter-reset:s}
+  .steps li{position:relative;padding:0 0 18px 44px;counter-increment:s}
+  .steps li::before{
+    content:counter(s);position:absolute;left:0;top:-2px;width:30px;height:30px;border-radius:50%;
+    background:var(--missed);color:#fff;font-weight:700;font-size:14px;display:grid;place-items:center
+  }
+  .steps li:not(:last-child)::after{content:"";position:absolute;left:14px;top:30px;bottom:6px;width:2px;background:var(--missed-soft)}
+  .steps .st{font-size:15.5px;font-weight:600;line-height:1.35;margin-bottom:3px}
+  .steps .sd{font-size:13.5px;color:var(--muted);line-height:1.45}
+
+  .branchq{margin:2px 0 20px}
+  .branchq .q{font-size:14.5px;font-weight:620;margin:0 2px 10px}
+  .chiprow{display:flex;gap:9px;flex-wrap:wrap}
+  .chip{border:1.5px solid var(--hair);background:var(--surface);border-radius:12px;padding:11px 14px;font-size:14px;font-weight:600;cursor:pointer;font-family:inherit;color:var(--ink);flex:1;min-width:90px;text-align:center}
+  .chip.sel{border-color:var(--accent);background:var(--safe-soft);color:var(--accent)}
+  .chip:active{transform:scale(.97)}
+
+  .callout{background:var(--caution-soft);border-radius:14px;padding:14px 16px;font-size:13.5px;line-height:1.5;color:#7a5e16;margin:6px 0 18px;display:flex;gap:10px}
+  .callout svg{width:18px;height:18px;flex:none;margin-top:1px;color:var(--caution)}
+  .disclaimer{background:var(--surface);border:1px solid var(--hair);border-radius:14px;padding:14px 16px;font-size:12.5px;line-height:1.5;color:var(--muted);margin-top:6px}
+  .disclaimer b{color:var(--ink)}
+
+  .setrow{display:flex;justify-content:space-between;align-items:center;padding:16px 2px;border-bottom:1px solid var(--hair)}
+  .setrow .k{font-size:14px;color:var(--muted)}
+  .setrow .v{font-size:15px;font-weight:620;text-align:right}
+  .set-edit{margin-top:18px;display:flex;flex-direction:column;gap:14px}
+  .reset{color:var(--missed)}
+</style>
+</head>
+<body>
+<div class="app">
+
+  <!-- ============ ONBOARDING ============ -->
+  <section class="screen" id="ob">
+    <div class="topbar">
+      <div class="brandmark">
+        <svg class="leaf" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/><path d="M2 21c0-3 1.85-5.36 5.08-6"/></svg>
+        <b>Grace Period</b>
+      </div>
+    </div>
+
+    <!-- step 1: brand -->
+    <div id="ob1">
+      <div class="step-dots" id="dots1"></div>
+      <div class="ob-head">
+        <h1>Which pill does she take?</h1>
+        <p>Start typing the brand on the packet. We'll match it to the right timing rules.</p>
+      </div>
+      <label class="fld">Pill brand</label>
+      <div class="suggest">
+        <input class="input" id="brandInput" placeholder="e.g. Microgynon, Cerazette, Yasmin" autocomplete="off" autocapitalize="words">
+        <div class="suglist" id="sugList"></div>
+      </div>
+      <p class="hint">Can't find it, or not sure? Type the name anyway — you'll choose the pill type on the next screen.</p>
+      <div class="footer-btn">
+        <button class="btn btn-primary" id="ob1next" disabled>Continue</button>
+      </div>
+    </div>
+
+    <!-- step 2: type confirm -->
+    <div id="ob2" style="display:none">
+      <div class="step-dots" id="dots2"></div>
+      <div class="ob-head">
+        <h1 id="ob2title">Confirm the pill type</h1>
+        <p id="ob2sub">We matched this from the brand. Please check it against the leaflet — the timing window depends on it.</p>
+      </div>
+      <div id="typeCards"></div>
+      <div class="footer-btn">
+        <button class="btn btn-primary" id="ob2next">Continue</button>
+        <div class="linkrow"><button class="textlink" id="ob2back">Back</button></div>
+      </div>
+    </div>
+
+    <!-- step 3: time -->
+    <div id="ob3" style="display:none">
+      <div class="step-dots" id="dots3"></div>
+      <div class="ob-head">
+        <h1>What time each day?</h1>
+        <p>The daily dose time. The countdown and grace window are built around it.</p>
+      </div>
+      <label class="fld">Daily pill time</label>
+      <input class="input" id="timeInput" type="time" step="60">
+      <p class="hint" id="windowNote"></p>
+      <div class="footer-btn">
+        <button class="btn btn-primary" id="ob3done">Continue</button>
+        <div class="linkrow"><button class="textlink" id="ob3back">Back</button></div>
+      </div>
+    </div>
+
+    <!-- step 4: pack layout (combination + drospirenone only) -->
+    <div id="ob4" style="display:none">
+      <div class="step-dots" id="dots4"></div>
+      <div class="ob-head">
+        <h1>How is the pack laid out?</h1>
+        <p>This lets the timer relax during placebo or break days, when a late pill doesn't reduce protection. Check the packet if unsure.</p>
+      </div>
+      <div id="packCards"></div>
+      <div id="customPack" style="display:none;margin-top:12px">
+        <div class="timegrid">
+          <div style="flex:1"><label class="fld">Active pills</label><input class="input" id="custActive" type="number" min="1" max="120" value="21"></div>
+          <div style="flex:1"><label class="fld">Inactive days</label><input class="input" id="custInactive" type="number" min="0" max="14" value="7"></div>
+        </div>
+        <div class="chiprow" style="margin-top:10px">
+          <button class="chip sel" id="custPlacebo" data-kind="placebo">Placebo pills</button>
+          <button class="chip" id="custBreak" data-kind="break">No pills (break)</button>
+        </div>
+      </div>
+      <div style="margin-top:18px">
+        <label class="fld">Which day of the pack is she on today?</label>
+        <input class="input" id="packDayInput" type="number" min="1" max="120" value="1">
+        <p class="hint">Count from the first active pill of the current strip (day 1). You can change this anytime.</p>
+      </div>
+      <div class="footer-btn">
+        <button class="btn btn-primary" id="ob4done">Start tracking</button>
+        <div class="linkrow"><button class="textlink" id="ob4back">Back</button></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ MAIN ============ -->
+  <section class="screen" id="home">
+    <div class="topbar">
+      <div class="brandmark">
+        <svg class="leaf" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/><path d="M2 21c0-3 1.85-5.36 5.08-6"/></svg>
+        <b>Grace Period</b>
+      </div>
+      <button class="icon-btn" id="openSettings" aria-label="Settings">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1Z"/></svg>
+      </button>
+    </div>
+
+    <div class="main-wrap">
+      <div class="packchip" id="packChip" style="display:none"></div>
+      <div class="statusword" id="statusWord">PROTECTED</div>
+      <div class="ringbox">
+        <svg class="ring" viewBox="0 0 120 120">
+          <circle class="ring-track" cx="60" cy="60" r="54" fill="none" stroke-width="9"/>
+          <circle class="ring-prog breathe" id="ringProg" cx="60" cy="60" r="54" fill="none" stroke-width="9" stroke-linecap="round" stroke-dasharray="339.292" stroke-dashoffset="0"/>
+        </svg>
+        <div class="ring-center">
+          <div class="big-time" id="bigTime">--:--</div>
+          <div class="big-sub" id="bigSub">until the next pill</div>
+        </div>
+      </div>
+      <div class="pill-line"><span class="dot"></span><span id="pillLine">—</span></div>
+    </div>
+
+    <div class="actions">
+      <button class="btn btn-primary" id="takeBtn">I took today's pill</button>
+      <button class="btn btn-danger" id="planBtn" style="display:none">What do I do now?</button>
+    </div>
+    <div class="taken-note" id="takenNote"></div>
+  </section>
+</div>
+
+<!-- ============ SETTINGS SHEET ============ -->
+<div class="sheet-bg" id="setBg">
+  <div class="sheet" id="setSheet">
+    <div class="grab"></div>
+    <h2>Settings</h2>
+    <p class="lead">Update the pill, the time, or start over.</p>
+    <div class="set-view" id="setView">
+      <div class="setrow"><span class="k">Brand</span><span class="v" id="sBrand">—</span></div>
+      <div class="setrow"><span class="k">Pill type</span><span class="v" id="sType">—</span></div>
+      <div class="setrow"><span class="k">Grace window</span><span class="v" id="sWindow">—</span></div>
+      <div class="setrow"><span class="k">Daily time</span><span class="v" id="sTime">—</span></div>
+      <div class="setrow" id="sPackRow"><span class="k">Pack</span><span class="v" id="sPack">—</span></div>
+      <div class="setrow" id="sTodayRow"><span class="k">Today</span><span class="v" id="sToday">—</span></div>
+      <div class="setrow"><span class="k">Last taken</span><span class="v" id="sLast">—</span></div>
+      <div class="set-edit">
+        <p class="hint" style="margin:2px 4px -6px;font-weight:600;color:var(--ink)">Daily reminder at <b id="icsTimeLabel">—</b></p>
+        <button class="btn btn-primary" id="icsBtn">
+          <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-3px;margin-right:7px"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+          Add to Apple Calendar
+        </button>
+        <button class="btn btn-ghost" id="gcalBtn">
+          <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-3px;margin-right:7px"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18M9 16l2 2 4-4"/></svg>
+          Add to Google Calendar
+        </button>
+        <p class="hint" style="margin:-4px 4px 4px">Apple: tap the file, then <b>Add All</b>. Google: opens a pre-filled event — just tap <b>Save</b>. Set your dose time first under "Edit pill &amp; time".</p>
+        <button class="btn btn-ghost" id="editBtn">Edit pill &amp; time</button>
+        <button class="btn btn-ghost reset" id="resetBtn">Start over</button>
+        <button class="btn btn-soft" id="closeSet">Done</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ ACTION PLAN SHEET ============ -->
+<div class="sheet-bg" id="planBg">
+  <div class="sheet" id="planSheet">
+    <div class="grab"></div>
+    <h2 class="alert">Missed pill — here's the plan</h2>
+    <p class="lead" id="planLead"></p>
+    <div id="planBranch"></div>
+    <ol class="steps" id="planSteps"></ol>
+    <div class="callout" id="planCallout" style="display:none">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 9v4M12 17h.01"/><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0Z"/></svg>
+      <span id="planCalloutText"></span>
+    </div>
+    <div class="disclaimer">
+      <b>This is general guidance, not medical advice.</b> Missed-pill rules vary by exact brand and where you are in the pack. Always check the patient information leaflet inside the box, and contact a pharmacist or doctor — they can confirm what to do and whether emergency contraception is needed. In an emergency, call your local emergency number.
+    </div>
+    <div style="margin-top:16px"><button class="btn btn-soft" id="closePlan">Close</button></div>
+  </div>
+</div>
+
+<script>
+/* ---------------- storage (localStorage with safe fallback) ---------------- */
+var mem = {};
+var store = {
+  get:function(k){ try{ var v=localStorage.getItem(k); return v===null?(k in mem?mem[k]:null):v; }catch(e){ return k in mem?mem[k]:null; } },
+  set:function(k,v){ try{ localStorage.setItem(k,v); }catch(e){ mem[k]=v; } },
+  del:function(k){ try{ localStorage.removeItem(k); }catch(e){} delete mem[k]; }
+};
+
+/* ---------------- pill brand database ---------------- */
+/* type keys: pop3 (traditional POP, 3h) | pop12 (desogestrel POP, 12h) | pop24 (drospirenone POP, 24h) | coc (combined, ~24h) */
+var TYPES = {
+  pop3:  {name:"Mini-pill (traditional)", hrs:3,  desc:"Progestogen-only with a strict 3-hour window. e.g. Micronor, Noriday, Norgeston, Camila, Errin."},
+  pop12: {name:"Mini-pill (desogestrel)", hrs:12, desc:"Progestogen-only with a 12-hour window. e.g. Cerazette, Cerelle, Feanolla."},
+  pop24: {name:"Mini-pill (drospirenone)",hrs:24, desc:"Progestogen-only with a 24-hour window. e.g. Slynd, Slinda."},
+  coc:   {name:"Combination pill",        hrs:24, desc:"Contains oestrogen + progestogen, taken once daily. Counts as missed once 24+ hours late. e.g. Microgynon, Yasmin, Yaz, Rigevidon."}
+};
+var BRANDS = [
+  ["Microgynon 30","coc"],["Microgynon ED","coc"],["Rigevidon","coc"],["Yasmin","coc"],["Yaz","coc"],
+  ["Marvelon","coc"],["Cilest","coc"],["Loestrin","coc"],["Brevinor","coc"],["Lucette","coc"],
+  ["Levlen ED","coc"],["Levora","coc"],["Sprintec","coc"],["Junel","coc"],["Apri","coc"],
+  ["Lessina","coc"],["Aviane","coc"],["Ortho Tri-Cyclen","coc"],["Tri-Sprintec","coc"],["Seasonale","coc"],
+  ["Micronor","pop3"],["Noriday","pop3"],["Norgeston","pop3"],["Camila","pop3"],["Errin","pop3"],
+  ["Heather","pop3"],["Jolivette","pop3"],["Nora-BE","pop3"],
+  ["Cerazette","pop12"],["Cerelle","pop12"],["Feanolla","pop12"],["Aizea","pop12"],["Zelleta","pop12"],
+  ["Slynd","pop24"],["Slinda","pop24"]
+];
+
+/* ---------------- state ---------------- */
+var S = {brand:"",type:"",hrs:24,time:"08:00",last:null,pack:null};
+function load(){
+  var raw = store.get("gp_state");
+  if(raw){ try{ S = JSON.parse(raw); }catch(e){} }
+  if(typeof S.pack==="undefined") S.pack=null;
+  return !!raw && S.type;
+}
+function save(){ store.set("gp_state", JSON.stringify(S)); }
+function clearAll(){ store.del("gp_state"); S={brand:"",type:"",hrs:24,time:"08:00",last:null,pack:null}; }
+
+/* pill packs that have a placebo / break phase */
+function needsPack(type){ return type==="coc"||type==="pop24"; }
+var PACK_PRESETS=[
+  {id:"21break",label:"21 active + 7-day break",desc:"21-day pack: 21 hormone pills, then 7 days with no pills at all.",active:21,inactive:7,kind:"break"},
+  {id:"21plac", label:"21 active + 7 placebo", desc:"28-day pack: 21 hormone pills, then 7 inactive reminder pills.",active:21,inactive:7,kind:"placebo"},
+  {id:"24plac", label:"24 active + 4 placebo", desc:"24/4 pack — common for Yaz and Slynd.",active:24,inactive:4,kind:"placebo"},
+  {id:"cont",   label:"Continuous — no break", desc:"Every pill is active; no placebo week or break.",active:28,inactive:0,kind:"none"},
+  {id:"custom", label:"Something else",        desc:"Set the active and inactive counts yourself.",active:21,inactive:7,kind:"placebo"}
+];
+function dotsTotal(){ return needsPack(draft.type)?4:3; }
+function renderDots(id,idx,total){
+  var el=$(id); if(!el)return; var h="";
+  for(var i=0;i<total;i++) h+='<span class="'+(i<=idx?"on":"")+'"></span>';
+  el.innerHTML=h;
+}
+/* current pack position from the stored start date (auto-rolls each cycle) */
+function packInfo(now){
+  if(!S.pack || !S.pack.startISO) return null;
+  var len=S.pack.active+S.pack.inactive; if(len<=0) return null;
+  var start=new Date(S.pack.startISO+"T00:00:00");
+  var t0=new Date(now); t0.setHours(0,0,0,0);
+  var days=Math.floor((t0-start)/86400000);
+  var inPack=((days%len)+len)%len;
+  var phase = inPack < S.pack.active ? "active" : (S.pack.kind==="break"?"break":"placebo");
+  return {len:len,dayNum:inPack+1,inPack:inPack,phase:phase,kind:S.pack.kind,
+          active:S.pack.active,inactive:S.pack.inactive,
+          daysToNext: phase==="active"?null:(len-inPack)};
+}
+
+/* ---------------- helpers ---------------- */
+function $(id){return document.getElementById(id);}
+function show(id){ document.querySelectorAll(".screen").forEach(function(s){s.classList.remove("active");}); $(id).classList.add("active"); }
+function pad(n){return n<10?"0"+n:""+n;}
+function fmtTime12(hhmm){
+  var p=hhmm.split(":"),h=+p[0],m=+p[1],ap=h>=12?"PM":"AM",h12=h%12; if(h12===0)h12=12;
+  return h12+":"+pad(m)+" "+ap;
+}
+function fmtClock(ms){ // ms -> "Hh Mm" or "Mm"
+  var s=Math.floor(ms/1000), h=Math.floor(s/3600), m=Math.floor((s%3600)/60);
+  if(h>0) return h+"h "+pad(m)+"m";
+  return m+"m "+pad(s%60)+"s";
+}
+
+/* next due time = the upcoming (or current) dose boundary based on daily time */
+function dueAround(now){
+  var p=S.time.split(":");
+  var d=new Date(now); d.setHours(+p[0],+p[1],0,0);
+  return d; // today's scheduled time
+}
+
+/* ---------------- onboarding flow ---------------- */
+var draft={brand:"",type:"",time:"08:00",pack:null,packDay:1};
+
+function renderSuggest(q){
+  var list=$("sugList"); q=q.trim().toLowerCase();
+  if(!q){ list.classList.remove("show"); list.innerHTML=""; return; }
+  var hits=BRANDS.filter(function(b){return b[0].toLowerCase().indexOf(q)>-1;}).slice(0,6);
+  if(!hits.length){ list.classList.remove("show"); list.innerHTML=""; return; }
+  list.innerHTML=hits.map(function(b){
+    return '<div class="sug" data-name="'+b[0]+'" data-type="'+b[1]+'"><span>'+b[0]+'</span><span class="tag">'+TYPES[b[1]].name+'</span></div>';
+  }).join("");
+  list.classList.add("show");
+  list.querySelectorAll(".sug").forEach(function(el){
+    el.addEventListener("click",function(){
+      draft.brand=el.getAttribute("data-name");
+      draft.type=el.getAttribute("data-type");
+      $("brandInput").value=draft.brand;
+      list.classList.remove("show");
+      $("ob1next").disabled=false;
+    });
+  });
+}
+$("brandInput").addEventListener("input",function(e){
+  draft.brand=e.target.value;
+  draft.type=""; // typed freely; will confirm next step
+  $("ob1next").disabled = e.target.value.trim().length<2;
+  renderSuggest(e.target.value);
+});
+document.addEventListener("click",function(e){
+  if(!e.target.closest(".suggest")) $("sugList").classList.remove("show");
+});
+
+$("ob1next").addEventListener("click",function(){
+  buildTypeCards();
+  $("ob2title").textContent = draft.brand ? 'Confirm the type for "'+draft.brand+'"' : "Choose the pill type";
+  renderDots("dots2",1,dotsTotal());
+  $("ob1").style.display="none"; $("ob2").style.display="block";
+});
+$("ob2back").addEventListener("click",function(){ renderDots("dots1",0,dotsTotal()); $("ob2").style.display="none"; $("ob1").style.display="block"; });
+
+function buildTypeCards(){
+  var wrap=$("typeCards"); wrap.innerHTML="";
+  Object.keys(TYPES).forEach(function(k){
+    var t=TYPES[k];
+    var div=document.createElement("div");
+    div.className="typecard"+(draft.type===k?" sel":"");
+    div.innerHTML='<span class="rd"></span><div><div class="tt">'+t.name+' · '+t.hrs+'h window</div><div class="td">'+t.desc+'</div></div>';
+    div.addEventListener("click",function(){
+      draft.type=k;
+      wrap.querySelectorAll(".typecard").forEach(function(c){c.classList.remove("sel");});
+      div.classList.add("sel");
+      renderDots("dots2",1,dotsTotal());
+    });
+    wrap.appendChild(div);
+  });
+}
+$("ob2next").addEventListener("click",function(){
+  if(!draft.type){ alert("Please choose the pill type — it sets the timing window."); return; }
+  $("windowNote").textContent = "With "+TYPES[draft.type].name.toLowerCase()+", a pill counts as missed once it's "+TYPES[draft.type].hrs+" hours late.";
+  $("timeInput").value=draft.time;
+  renderDots("dots3",2,dotsTotal());
+  $("ob2").style.display="none"; $("ob3").style.display="block";
+});
+$("ob3back").addEventListener("click",function(){ renderDots("dots2",1,dotsTotal()); $("ob3").style.display="none"; $("ob2").style.display="block"; });
+$("ob3done").addEventListener("click",function(){
+  draft.time = $("timeInput").value || "08:00";
+  if(needsPack(draft.type)){
+    buildPackStep();
+    renderDots("dots4",3,4);
+    $("ob3").style.display="none"; $("ob4").style.display="block";
+  } else {
+    draft.pack=null; finalize();
+  }
+});
+$("ob4back").addEventListener("click",function(){ renderDots("dots3",2,4); $("ob4").style.display="none"; $("ob3").style.display="block"; });
+
+/* ---- pack-layout step ---- */
+var selPreset="21plac", custKind="placebo";
+function presetIdFor(p){
+  if(!p) return null;
+  for(var i=0;i<PACK_PRESETS.length;i++){var pr=PACK_PRESETS[i];
+    if(pr.id!=="custom" && pr.active===p.active && pr.inactive===p.inactive && pr.kind===p.kind) return pr.id;}
+  return "custom";
+}
+function setCustKind(k){
+  custKind = k==="break"?"break":"placebo";
+  $("custPlacebo").classList.toggle("sel",custKind!=="break");
+  $("custBreak").classList.toggle("sel",custKind==="break");
+}
+$("custPlacebo").addEventListener("click",function(){ setCustKind("placebo"); });
+$("custBreak").addEventListener("click",function(){ setCustKind("break"); });
+function buildPackStep(){
+  selPreset = draft.pack ? presetIdFor(draft.pack) : (draft.type==="pop24"?"24plac":"21plac");
+  var wrap=$("packCards"); wrap.innerHTML="";
+  PACK_PRESETS.forEach(function(pr){
+    var div=document.createElement("div");
+    div.className="typecard"+(pr.id===selPreset?" sel":"");
+    div.innerHTML='<span class="rd"></span><div><div class="tt">'+pr.label+'</div><div class="td">'+pr.desc+'</div></div>';
+    div.addEventListener("click",function(){
+      selPreset=pr.id;
+      wrap.querySelectorAll(".typecard").forEach(function(c){c.classList.remove("sel");});
+      div.classList.add("sel");
+      $("customPack").style.display = pr.id==="custom"?"block":"none";
+    });
+    wrap.appendChild(div);
+  });
+  $("customPack").style.display = selPreset==="custom"?"block":"none";
+  if(draft.pack && selPreset==="custom"){
+    $("custActive").value=draft.pack.active;
+    $("custInactive").value=draft.pack.inactive;
+    setCustKind(draft.pack.kind);
+  } else { setCustKind("placebo"); }
+  $("packDayInput").value = draft.packDay||1;
+}
+$("ob4done").addEventListener("click",function(){
+  var pack;
+  if(selPreset==="custom"){
+    var a=Math.max(1,parseInt($("custActive").value,10)||21);
+    var inact=Math.max(0,parseInt($("custInactive").value,10)||0);
+    pack={active:a,inactive:inact,kind:inact===0?"none":custKind};
+  } else {
+    var pr=PACK_PRESETS.filter(function(p){return p.id===selPreset;})[0];
+    pack={active:pr.active,inactive:pr.inactive,kind:pr.kind};
+  }
+  var len=pack.active+pack.inactive;
+  var day=Math.min(Math.max(1,parseInt($("packDayInput").value,10)||1),len);
+  var s=new Date(); s.setHours(0,0,0,0); s.setDate(s.getDate()-(day-1));
+  pack.startISO=s.getFullYear()+"-"+pad(s.getMonth()+1)+"-"+pad(s.getDate());
+  draft.pack=pack; draft.packDay=day;
+  finalize();
+});
+
+function finalize(){
+  S.brand=draft.brand||TYPES[draft.type].name;
+  S.type=draft.type; S.hrs=TYPES[draft.type].hrs; S.time=draft.time;
+  S.pack = needsPack(draft.type) ? draft.pack : null;
+  if(typeof S.last==="undefined") S.last=null;
+  save(); startMain();
+}
+
+/* ---------------- main loop ---------------- */
+var timer=null;
+function startMain(){ show("home"); refreshSettingsView(); tick(); if(timer)clearInterval(timer); timer=setInterval(tick,1000); }
+
+function setStatus(state){
+  var map={safe:["var(--safe)","var(--safe-soft)"],caution:["var(--caution)","var(--caution-soft)"],missed:["var(--missed)","var(--missed-soft)"]};
+  document.documentElement.style.setProperty("--status",map[state][0]);
+  document.documentElement.style.setProperty("--status-soft",map[state][1]);
+  document.querySelector('meta[name=theme-color]').setAttribute("content", state==="missed"?"#F6E0DB":state==="caution"?"#F6ECD4":"#EDF1EC");
+}
+
+function tick(){
+  var C=339.292, now=Date.now();
+  var prog=$("ringProg"), word=$("statusWord"), bt=$("bigTime"), bs=$("bigSub"), pl=$("pillLine");
+  var takeBtn=$("takeBtn"), planBtn=$("planBtn"), note=$("takenNote"), chip=$("packChip");
+  var graceMs=S.hrs*3600*1000;
+  bt.style.fontSize="46px";
+
+  /* pack position */
+  var pi=packInfo(now);
+  if(pi){
+    var phaseLabel = pi.phase==="active"?"Active pill":(pi.phase==="break"?"Pill-free break":"Placebo pill");
+    chip.style.display="flex";
+    chip.innerHTML='<span class="pk"></span>'+phaseLabel+' · day '+pi.dayNum+' of '+pi.len;
+  } else { chip.style.display="none"; }
+
+  var lastTs=S.last?Date.parse(S.last):null;
+  note.textContent = S.last ? "Last taken "+relTime(lastTs) : "No pill logged yet.";
+
+  /* ---- PLACEBO / BREAK: relax, no missed-pill panic ---- */
+  if(pi && pi.phase!=="active"){
+    setStatus("safe");
+    prog.classList.add("breathe");
+    planBtn.style.display="none";
+    var nearEnd = pi.daysToNext<=1;
+    if(pi.phase==="break"){
+      word.textContent="PILL-FREE BREAK";
+      bt.textContent=pi.daysToNext+(pi.daysToNext===1?" day":" days");
+      bt.style.fontSize="42px";
+      bs.textContent = nearEnd ? "until the next pack — start it on time" : "until your next pack starts";
+      pl.textContent="No pill today. Don't extend the break past "+pi.inactive+" days.";
+      prog.style.strokeDashoffset = C*(1-((pi.inactive-pi.daysToNext)/(pi.inactive||1)));
+      takeBtn.style.display="block"; takeBtn.disabled=true; takeBtn.textContent="No pill to take today";
+    } else { /* placebo */
+      word.textContent="REMINDER PILL";
+      bt.textContent=pi.daysToNext+(pi.daysToNext===1?" day":" days");
+      bt.style.fontSize="42px";
+      bs.textContent = nearEnd ? "until your next pack — start it on time" : "of reminder pills left";
+      pl.textContent="Inactive pill — missing it won't reduce protection.";
+      prog.style.strokeDashoffset = C*(1-((pi.inactive-pi.daysToNext)/(pi.inactive||1)));
+      takeBtn.style.display="block"; takeBtn.disabled=false; takeBtn.textContent="I took today's reminder pill";
+    }
+    return;
+  }
+  takeBtn.disabled=false;
+
+  /* ---- ACTIVE phase (or no pack tracking) ---- */
+  var sched=dueAround(now).getTime();
+  var takenToday=false;
+  if(lastTs){
+    var ld=new Date(lastTs), nd=new Date(now);
+    takenToday = ld.toDateString()===nd.toDateString();
+  }
+  var due = takenToday ? sched + 86400000 : sched;
+  var lateBy = now - due;
+
+  if(lateBy < 0){
+    setStatus("safe"); word.textContent="PROTECTED";
+    var until=-lateBy;
+    bt.textContent = fmtClock(until); bs.textContent="until the next pill";
+    pl.textContent = (takenToday?"Next dose ":"Today's dose at ")+fmtTime12(S.time);
+    var dayElapsed = (86400000 - until)/86400000; if(dayElapsed<0)dayElapsed=0;
+    prog.style.strokeDashoffset = C*(1-dayElapsed);
+    prog.classList.add("breathe");
+    takeBtn.style.display="block"; takeBtn.textContent = takenToday?"Taken — log again":"I took today's pill";
+    planBtn.style.display="none";
+  } else if(lateBy < graceMs){
+    setStatus("caution"); word.textContent="GRACE PERIOD";
+    var left=graceMs-lateBy;
+    bt.textContent=fmtClock(left); bs.textContent="left before it counts as missed";
+    pl.textContent="Take it as soon as you can";
+    prog.style.strokeDashoffset = C*(1-(left/graceMs));
+    prog.classList.remove("breathe");
+    takeBtn.style.display="block"; takeBtn.textContent="I just took it";
+    planBtn.style.display="none";
+  } else {
+    setStatus("missed"); word.textContent="PILL MISSED";
+    bt.textContent="Late"; bt.style.fontSize="40px";
+    bs.textContent="this dose is now "+fmtClock(lateBy)+" overdue";
+    pl.textContent="Open the action plan below";
+    prog.style.strokeDashoffset=0;
+    prog.classList.remove("breathe");
+    takeBtn.style.display="block"; takeBtn.textContent="I've now taken it";
+    planBtn.style.display="block";
+  }
+}
+function relTime(ts){
+  var diff=Date.now()-ts, m=Math.floor(diff/60000);
+  if(m<1)return"just now"; if(m<60)return m+" min ago";
+  var h=Math.floor(m/60); if(h<24)return h+"h "+(m%60)+"m ago";
+  var d=Math.floor(h/24); return d+(d===1?" day ago":" days ago");
+}
+
+$("takeBtn").addEventListener("click",function(){
+  S.last=new Date().toISOString(); save();
+  $("bigTime").style.fontSize="46px";
+  var b=$("takeBtn"); b.textContent="✓ Logged"; setTimeout(tick,650);
+});
+
+/* ---------------- action plan ---------------- */
+var planState={count:null,week:null};
+function openPlan(){
+  planState={count:null,week:null};
+  var lead=$("planLead"), branch=$("planBranch"), steps=$("planSteps"), co=$("planCallout");
+  steps.innerHTML=""; branch.innerHTML=""; co.style.display="none";
+
+  if(S.type==="coc"){
+    var pi0=packInfo(Date.now());
+    var knownWeek=(pi0&&pi0.phase==="active")?Math.min(3,Math.ceil(pi0.dayNum/7)):null;
+    lead.textContent="For "+S.brand+" (combination pill). Answer two quick questions and we'll tailor the steps.";
+    branch.innerHTML =
+      '<div class="branchq"><div class="q">How many active pills have been missed in a row?</div>'+
+        '<div class="chiprow"><button class="chip" data-c="1">Just 1</button><button class="chip" data-c="2">2 or more</button></div></div>'+
+      '<div class="branchq" id="weekQ" style="display:none"><div class="q">Which week of the active pills?'+(knownWeek?' <span style="font-weight:500;color:var(--muted)">(set from your pack)</span>':'')+'</div>'+
+        '<div class="chiprow"><button class="chip" data-w="1">Week 1<br><small>days 1–7</small></button>'+
+        '<button class="chip" data-w="2">Week 2<br><small>days 8–14</small></button>'+
+        '<button class="chip" data-w="3">Week 3<br><small>days 15–21</small></button></div></div>';
+    function markWeek(w){ branch.querySelectorAll("[data-w]").forEach(function(x){x.classList.toggle("sel",+x.getAttribute("data-w")===w);}); }
+    branch.querySelectorAll("[data-c]").forEach(function(b){
+      b.addEventListener("click",function(){
+        planState.count=+b.getAttribute("data-c");
+        branch.querySelectorAll("[data-c]").forEach(function(x){x.classList.remove("sel");}); b.classList.add("sel");
+        $("weekQ").style.display = planState.count>=2 ? "block":"none";
+        if(planState.count===1){ planState.week=null; renderCoc(); }
+        else if(knownWeek){ planState.week=knownWeek; markWeek(knownWeek); renderCoc(); }
+        else if(planState.week){ markWeek(planState.week); renderCoc(); }
+        else { steps.innerHTML=""; co.style.display="none"; }
+      });
+    });
+    branch.querySelectorAll("[data-w]").forEach(function(b){
+      b.addEventListener("click",function(){
+        planState.week=+b.getAttribute("data-w");
+        branch.querySelectorAll("[data-w]").forEach(function(x){x.classList.remove("sel");}); b.classList.add("sel");
+        renderCoc();
+      });
+    });
+  } else {
+    lead.textContent="For "+S.brand+" ("+TYPES[S.type].name.toLowerCase()+", "+S.hrs+"-hour window).";
+    renderPop();
+  }
+  $("planBg").classList.add("show");
+}
+
+function renderSteps(arr){
+  $("planSteps").innerHTML = arr.map(function(s){
+    return '<li><div class="st">'+s[0]+'</div><div class="sd">'+s[1]+'</div></li>';
+  }).join("");
+}
+function setCallout(txt){ var co=$("planCallout"); if(txt){$("planCalloutText").textContent=txt; co.style.display="flex";} else co.style.display="none"; }
+
+function renderPop(){
+  renderSteps([
+    ["Take the late pill now","Even if that means taking two pills in one day. Don't skip it."],
+    ["Carry on as normal","Take the next pill at the usual time of "+fmtTime12(S.time)+"."],
+    ["Use condoms for 2 days","Avoid sex, or use condoms, for the next 48 hours until protection rebuilds."],
+    ["Check about emergency contraception","If there was unprotected sex in the last few days, call a pharmacist or doctor today — it may still help."]
+  ]);
+  setCallout("With "+TYPES[S.type].name.toLowerCase()+", being even a little over "+S.hrs+" hours late lowers protection until you've taken pills correctly for 2 days.");
+}
+
+function renderCoc(){
+  if(planState.count===1){
+    renderSteps([
+      ["Take the missed pill now","Even if it means two in one day. This keeps you covered."],
+      ["Continue the pack as normal","Take the rest one a day at "+fmtTime12(S.time)+", and take your usual 7-day break / placebo week."],
+      ["No backup needed","One missed combination pill doesn't usually need condoms or emergency contraception."]
+    ]);
+    setCallout(null);
+    return;
+  }
+  // 2+ missed
+  if(!planState.week){ $("planSteps").innerHTML=""; return; }
+  var base=[
+    ["Take the most recent missed pill now","Leave any earlier missed ones — just take the latest one, even if two in a day."],
+    ["Keep taking one a day","Continue the rest of the active pills at "+fmtTime12(S.time)+"."],
+    ["Use condoms for 7 days","Avoid sex, or use condoms, until 7 active pills have been taken in a row."]
+  ];
+  var co="";
+  if(planState.week===1){
+    base.push(["Consider emergency contraception","If there was unprotected sex during the pill-free break or in week 1, emergency contraception may be needed — contact a pharmacist or doctor today."]);
+    co="Missing 2+ pills in week 1 is the highest-risk case after a pill-free break.";
+  } else if(planState.week===2){
+    co="If 7 pills were taken correctly before these were missed, emergency contraception isn't usually needed — but still use condoms for 7 days.";
+  } else {
+    base.push(["Skip the break — start the next pack","Finish the active pills, then go straight into a new pack (skip the placebo / pill-free week). This keeps you protected."]);
+    co="In week 3, skipping the break after missed pills is what maintains cover.";
+  }
+  renderSteps(base); setCallout(co);
+}
+
+$("planBtn").addEventListener("click",openPlan);
+$("closePlan").addEventListener("click",function(){ $("planBg").classList.remove("show"); });
+$("planBg").addEventListener("click",function(e){ if(e.target===this) this.classList.remove("show"); });
+
+/* ---------------- settings ---------------- */
+function refreshSettingsView(){
+  $("sBrand").textContent=S.brand||"—";
+  $("sType").textContent=S.type?TYPES[S.type].name:"—";
+  $("sWindow").textContent=S.hrs+" hours";
+  $("sTime").textContent=fmtTime12(S.time);
+  $("sLast").textContent=S.last?relTime(Date.parse(S.last)):"—";
+  $("icsTimeLabel").textContent=fmtTime12(S.time);
+  if(S.pack){
+    var k=S.pack.kind, kindWord=k==="break"?"break":k==="none"?"continuous":"placebo";
+    $("sPackRow").style.display="flex"; $("sTodayRow").style.display="flex";
+    $("sPack").textContent = k==="none" ? "Continuous (all active)" : (S.pack.active+" active + "+S.pack.inactive+" "+kindWord);
+    var pi=packInfo(Date.now());
+    if(pi){
+      var ph=pi.phase==="active"?"active pill":(pi.phase==="break"?"pill-free break":"placebo pill");
+      $("sToday").textContent="Day "+pi.dayNum+" of "+pi.len+" · "+ph;
+    } else $("sToday").textContent="—";
+  } else {
+    $("sPackRow").style.display="none"; $("sTodayRow").style.display="none";
+  }
+}
+
+/* ---------------- calendar (.ics) reminder ---------------- */
+function icsLocal(d){ // floating local time — stays at the same wall-clock time in any zone
+  return d.getFullYear()+pad(d.getMonth()+1)+pad(d.getDate())+"T"+pad(d.getHours())+pad(d.getMinutes())+"00";
+}
+function icsUTC(d){
+  return d.getUTCFullYear()+pad(d.getUTCMonth()+1)+pad(d.getUTCDate())+"T"+
+         pad(d.getUTCHours())+pad(d.getUTCMinutes())+pad(d.getUTCSeconds())+"Z";
+}
+function downloadIcs(){
+  var p=S.time.split(":");
+  var start=new Date(); start.setHours(+p[0],+p[1],0,0); // first occurrence today at dose time
+  var summary=("Take pill ("+(S.brand||"birth control")+")").replace(/([,;\\])/g,"\\$1");
+  var lines=[
+    "BEGIN:VCALENDAR","VERSION:2.0","PRODID:-//Grace Period//Reminder//EN","CALSCALE:GREGORIAN","METHOD:PUBLISH",
+    "BEGIN:VEVENT",
+    "UID:gp-"+Date.now()+"@graceperiod.app",
+    "DTSTAMP:"+icsUTC(new Date()),
+    "DTSTART:"+icsLocal(start),
+    "DURATION:PT5M",
+    "RRULE:FREQ=DAILY",
+    "SUMMARY:"+summary,
+    "DESCRIPTION:Daily birth control reminder set in Grace Period.",
+    "BEGIN:VALARM","ACTION:DISPLAY","DESCRIPTION:Take your pill","TRIGGER:PT0S","END:VALARM",
+    "END:VEVENT","END:VCALENDAR"
+  ];
+  var content=lines.join("\r\n");
+  var blob=new Blob([content],{type:"text/calendar;charset=utf-8"});
+  var url=URL.createObjectURL(blob);
+  var a=document.createElement("a");
+  a.href=url; a.download="grace-period-reminder.ics"; a.rel="noopener";
+  document.body.appendChild(a); a.click();
+  setTimeout(function(){ document.body.removeChild(a); URL.revokeObjectURL(url); },1500);
+  var b=$("icsBtn"), old=b.innerHTML;
+  b.innerHTML="✓ Reminder ready — open it to add"; 
+  setTimeout(function(){ b.innerHTML=old; },2600);
+}
+
+/* ---------------- Google Calendar ---------------- */
+function gcalStamp(d){ return d.getFullYear()+pad(d.getMonth()+1)+pad(d.getDate())+"T"+pad(d.getHours())+pad(d.getMinutes())+"00"; }
+function openGoogleCal(){
+  var p=S.time.split(":");
+  var start=new Date(); start.setHours(+p[0],+p[1],0,0);
+  var end=new Date(start.getTime()+5*60000);
+  var tz=""; try{ tz=Intl.DateTimeFormat().resolvedOptions().timeZone||""; }catch(e){}
+  var params=[
+    "action=TEMPLATE",
+    "text="+encodeURIComponent("Take pill ("+(S.brand||"birth control")+")"),
+    "dates="+gcalStamp(start)+"/"+gcalStamp(end),
+    "recur="+encodeURIComponent("RRULE:FREQ=DAILY"),
+    "details="+encodeURIComponent("Daily birth control reminder set in Grace Period."),
+    tz?("ctz="+encodeURIComponent(tz)):""
+  ].filter(Boolean);
+  window.open("https://calendar.google.com/calendar/render?"+params.join("&"), "_blank", "noopener");
+}
+$("openSettings").addEventListener("click",function(){ refreshSettingsView(); $("setBg").classList.add("show"); });
+$("icsBtn").addEventListener("click",downloadIcs);
+$("gcalBtn").addEventListener("click",openGoogleCal);
+$("closeSet").addEventListener("click",function(){ $("setBg").classList.remove("show"); });
+$("setBg").addEventListener("click",function(e){ if(e.target===this) this.classList.remove("show"); });
+$("editBtn").addEventListener("click",function(){
+  $("setBg").classList.remove("show");
+  draft={brand:S.brand,type:S.type,time:S.time,pack:S.pack||null,packDay:1};
+  var pinfo=packInfo(Date.now()); if(pinfo) draft.packDay=pinfo.dayNum;
+  $("brandInput").value=S.brand; $("ob1next").disabled=false;
+  $("ob2").style.display="none"; $("ob3").style.display="none"; $("ob4").style.display="none";
+  $("ob1").style.display="block"; renderDots("dots1",0,dotsTotal());
+  show("ob");
+});
+$("resetBtn").addEventListener("click",function(){
+  if(confirm("Start over? This clears the saved pill and timing.")){
+    clearAll(); $("setBg").classList.remove("show");
+    draft={brand:"",type:"",time:"08:00",pack:null,packDay:1}; $("brandInput").value=""; $("ob1next").disabled=true;
+    $("ob2").style.display="none"; $("ob3").style.display="none"; $("ob4").style.display="none";
+    $("ob1").style.display="block"; renderDots("dots1",0,dotsTotal());
+    show("ob");
+  }
+});
+
+/* ---------------- boot ---------------- */
+renderDots("dots1",0,dotsTotal());
+if(load()){ startMain(); } else { show("ob"); }
+</script>
+</body>
+</html>
